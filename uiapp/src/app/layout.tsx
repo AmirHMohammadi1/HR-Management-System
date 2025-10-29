@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'یک سیستم جامع برای مدیریت منابع انسانی',
   keywords: 'HR, Human Resources, Management, Employees, Recruitment',
   authors: [{ name: 'HR Team' }],
-  viewport: 'width=device-width, initial-scale=1.0',
+  // viewport: 'width=device-width, initial-scale=1.0',
   robots: 'index, follow',
   openGraph: {
     title: 'سیستم مدیریت منابع انسانی',
