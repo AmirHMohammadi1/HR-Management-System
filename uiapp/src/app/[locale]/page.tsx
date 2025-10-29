@@ -1,5 +1,6 @@
 // app/page.tsx
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -23,7 +24,8 @@ export default function Home() {
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">نظرات</a>
           </div>
           <div className="flex space-x-4">
-            <button className="px-4 py-2 text-blue-600 font-medium">ورود</button>
+            <Link href={'/fa/dashboard'} className="px-4 py-2 text-blue-600 font-medium">dashboard</Link>
+            {/* <button className="px-4 py-2 text-blue-600 font-medium">ورود</button> */}
             <button className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
               شروع رایگان
             </button>
