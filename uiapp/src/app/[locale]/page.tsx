@@ -24,6 +24,8 @@ export default function Home() {
             <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">تعرفه‌ها</a>
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">نظرات</a>
             <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">سوالات</a>
+            <a href="/fa/about" className="text-gray-700 hover:text-blue-600 transition-colors">درباره ما</a>
+            <a href="/fa/contact" className="text-gray-700 hover:text-blue-600 transition-colors">تماس با ما</a>
           </div>
           <div className="flex space-x-4">
             <Link href="/fa/login" className="px-4 py-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
