@@ -1,4 +1,3 @@
-// app/about/page.tsx
 import Head from 'next/head';
 import Link from 'next/link';
 

@@ -1,4 +1,3 @@
-// app/page.tsx
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -18,14 +17,14 @@ export default function Home() {
         <nav className="flex justify-between items-center p-6 bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
           <div className="text-2xl font-bold text-blue-600">HR Pro</div>
           <div className="hidden md:flex space-x-8">
-            <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">امکانات</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors">نحوه کار</a>
-            <a href="#benefits" className="text-gray-700 hover:text-blue-600 transition-colors">مزایا</a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">تعرفه‌ها</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">نظرات</a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">سوالات</a>
-            <a href="/fa/about" className="text-gray-700 hover:text-blue-600 transition-colors">درباره ما</a>
-            <a href="/fa/contact" className="text-gray-700 hover:text-blue-600 transition-colors">تماس با ما</a>
+            <Link href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">امکانات</Link>
+            <Link href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors">نحوه کار</Link>
+            <Link href="#benefits" className="text-gray-700 hover:text-blue-600 transition-colors">مزایا</Link>
+            <Link href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">تعرفه‌ها</Link>
+            <Link href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">نظرات</Link>
+            <Link href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">سوالات</Link>
+            <Link href="/fa/about" className="text-gray-700 hover:text-blue-600 transition-colors">درباره ما</Link>
+            <Link href="/fa/contact" className="text-gray-700 hover:text-blue-600 transition-colors">تماس با ما</Link>
           </div>
           <div className="flex space-x-4">
             <Link href="/fa/login" className="px-4 py-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
@@ -508,18 +507,18 @@ export default function Home() {
               <div>
                 <h4 className="font-bold mb-4">لینک‌های مفید</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#features" className="hover:text-white transition-colors">امکانات</a></li>
-                  <li><a href="#pricing" className="hover:text-white transition-colors">تعرفه‌ها</a></li>
-                  <li><a href="#testimonials" className="hover:text-white transition-colors">نظرات مشتریان</a></li>
-                  <li><a href="#faq" className="hover:text-white transition-colors">سوالات متداول</a></li>
+                  <li><Link href="#features" className="hover:text-white transition-colors">امکانات</Link></li>
+                  <li><Link href="#pricing" className="hover:text-white transition-colors">تعرفه‌ها</Link></li>
+                  <li><Link href="#testimonials" className="hover:text-white transition-colors">نظرات مشتریان</Link></li>
+                  <li><Link href="#faq" className="hover:text-white transition-colors">سوالات متداول</Link></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-bold mb-4">پشتیبانی</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-white transition-colors">تماس با ما</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">مستندات</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">وبلاگ</a></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">تماس با ما</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">مستندات</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">وبلاگ</Link></li>
                   <li><Link href="/login" className="hover:text-white transition-colors">ورود به سامانه</Link></li>
                 </ul>
               </div>

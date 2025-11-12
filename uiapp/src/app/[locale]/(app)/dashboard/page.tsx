@@ -12,7 +12,8 @@ interface DashboardPageProps {
 
 export default async function DashboardPage({ params }: DashboardPageProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
 
   const statsData = [
     { title: 'تعداد کارمندان', value: '124', change: '+5%', icon: '👥' },

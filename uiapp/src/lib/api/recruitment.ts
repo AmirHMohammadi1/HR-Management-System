@@ -80,7 +80,7 @@ export const getJobPostings = async (filters?: {
     const searchTerm = filters.search.toLowerCase();
     filteredJobs = filteredJobs.filter(job => 
       job.title.toLowerCase().includes(searchTerm) ||
-      job.description.toLowerCase().includes(searchTerm)
+      job.description.toLowerCase().includes(searchTerm) 
     );
   }
   

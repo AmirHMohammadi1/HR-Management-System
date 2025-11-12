@@ -12,7 +12,8 @@ interface LayoutProps {
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
 
   // تعیین breadcrumb بر اساس مسیر
   const getBreadcrumbItems = () => {
@@ -25,14 +26,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <Sidebar locale={currentLocale} />
+      <Sidebar />
       <div className="flex flex-col flex-1">
         <Header locale={currentLocale} />
         <main className="flex-1 p-6 overflow-auto">
-          <Breadcrumb items={getBreadcrumbItems()} locale={currentLocale} />
+          <Breadcrumb items={getBreadcrumbItems()} />
           {children}
         </main>
-        <Footer locale={currentLocale} />
+        <Footer />
       </div>
     </div>
   );

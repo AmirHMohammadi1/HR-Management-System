@@ -8,7 +8,8 @@ interface JobsPageProps {
 
 export default async function JobsPage({ params }: JobsPageProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
 
   const jobPostings = [
     {

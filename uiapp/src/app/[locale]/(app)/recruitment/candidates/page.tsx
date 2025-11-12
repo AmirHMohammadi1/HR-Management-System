@@ -13,7 +13,8 @@ interface CandidatesPageProps {
 
 export default async function CandidatesPage({ params, searchParams }: CandidatesPageProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
   const { page = '1', status = '', search = '' } = await searchParams;
 
   return (

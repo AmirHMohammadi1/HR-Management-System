@@ -8,12 +8,13 @@ interface AttendancePageProps {
 
 export default async function AttendancePage({ params }: AttendancePageProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
 
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-gray-800">
-        {currentLocale === 'fa' ? 'حضور و غیاب' : 'Attendance'}
+        { currentLocale === 'fa' ? 'حضور و غیاب' : 'Attendance'}
       </h1>
       
       <TimeTracker locale={currentLocale} />

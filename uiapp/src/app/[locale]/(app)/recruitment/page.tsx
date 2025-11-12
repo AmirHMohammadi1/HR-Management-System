@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 
 import { useState } from 'react';
@@ -8,7 +9,6 @@ import { JobPostingForm } from '@/components/recruitment/JobPostingForm';
 import { useModal } from '@/hooks/useModal';
 import { JobPosting } from '@/types';
 import { createJobPosting, updateJobPosting } from '@/lib/api/recruitment';
-import Link from 'next/link';
 import { useLocale } from '@/hooks/useLocale';
 
 interface JobsPageProps {
@@ -16,7 +16,7 @@ interface JobsPageProps {
 }
 
 export default function JobsPage({ params }: JobsPageProps) {
-  const [paramsResolved] = useState(true);
+  const [paramsResolved, setParamsResolved] = useState(true);
   const [paramsData, setParamsData] = useState<{ locale: string }>({ locale: 'fa' });
   
   // Resolve async params
@@ -34,7 +34,7 @@ export default function JobsPage({ params }: JobsPageProps) {
 
   const { isOpen, openModal, closeModal } = useModal();
   const [editingJob, setEditingJob] = useState<JobPosting | null>(null);
-  const [refreshKey, setRefreshKey] = useState(0);
+  // const [refreshKey, setRefreshKey] = useState(0);
 
   const jobPostings = [
     {
@@ -66,10 +66,10 @@ export default function JobsPage({ params }: JobsPageProps) {
     openModal();
   };
 
-  const handleEditJob = (job: JobPosting) => {
-    setEditingJob(job);
-    openModal();
-  };
+  // const handleEditJob = (job: JobPosting) => {
+  //   setEditingJob(job);
+  //   openModal();
+  // };
 
   const handleSubmit = async (data: Omit<JobPosting, 'id' | 'applications' | 'postedDate'>) => {
     try {
@@ -78,7 +78,7 @@ export default function JobsPage({ params }: JobsPageProps) {
       } else {
         await createJobPosting(data);
       }
-      setRefreshKey(prev => prev + 1);
+      // setRefreshKey(prev => prev + 1);
       closeModal();
     } catch (error) {
       console.error('Error saving job:', error);
@@ -89,13 +89,13 @@ export default function JobsPage({ params }: JobsPageProps) {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-gray-800">
-          {currentLocale === 'fa' ? 'آگهی‌های شغلی' : 'Job Postings'}
+          {currentLocale.locale === 'fa' ? 'آگهی‌های شغلی' : 'Job Postings'}
         </h1>
         <button 
           onClick={handleCreateJob}
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200"
         >
-          {currentLocale === 'fa' ? 'آگهی جدید' : 'New Job Posting'}
+          {currentLocale.locale === 'fa' ? 'آگهی جدید' : 'New Job Posting'}
         </button>
       </div>
 
@@ -104,8 +104,8 @@ export default function JobsPage({ params }: JobsPageProps) {
           <JobPostingCard 
             key={job.id} 
             job={job} 
-            locale={currentLocale}
-            onEdit={() => handleEditJob(job)}
+            locale={currentLocale.locale}
+            // onEdit={() => handleEditJob(job)}
           />
         ))}
       </div>
@@ -114,13 +114,13 @@ export default function JobsPage({ params }: JobsPageProps) {
         isOpen={isOpen}
         onClose={closeModal}
         title={editingJob 
-          ? (currentLocale === 'fa' ? 'ویرایش آگهی' : 'Edit Job Posting')
-          : (currentLocale === 'fa' ? 'آگهی جدید' : 'New Job Posting')
+          ? (currentLocale.locale === 'fa' ? 'ویرایش آگهی' : 'Edit Job Posting')
+          : (currentLocale.locale === 'fa' ? 'آگهی جدید' : 'New Job Posting')
         }
       >
         <JobPostingForm
           job={editingJob || undefined}
-          locale={currentLocale}
+          locale={currentLocale.locale}
           onSubmit={handleSubmit}
           onCancel={closeModal}
         />

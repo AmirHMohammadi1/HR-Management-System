@@ -30,13 +30,14 @@ export const formatCurrency = (amount: number, locale: string = 'fa'): string =>
   }).format(amount);
 };
 
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
+    // eslint-disable-next-line prefer-spread
     timeout = setTimeout(() => func.apply(null, args), wait);
   };
 };

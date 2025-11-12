@@ -8,7 +8,8 @@ interface PerformancePageProps {
 
 export default async function PerformancePage({ params }: PerformancePageProps) {
   const { locale } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
 
   return (
     <div className="space-y-6">

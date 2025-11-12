@@ -20,7 +20,7 @@ export interface JobPosting {
   applications: number;
   status: 'open' | 'closed';
   postedDate: string;
-  description?: string;
+  description: string;
   requirements?: string[];
   salaryRange?: string;
 }

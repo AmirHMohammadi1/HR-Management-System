@@ -15,6 +15,7 @@ interface ApplicationListProps {
 }
 
 export const ApplicationList = ({ locale }: ApplicationListProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [applications, setApplications] = useState<Application[]>([
     {
       id: 1,

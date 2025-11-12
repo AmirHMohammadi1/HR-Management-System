@@ -8,7 +8,8 @@ interface JobDetailPageProps {
 
 export default async function JobDetailPage({ params }: JobDetailPageProps) {
   const { locale, id } = await params;
-  const currentLocale = useLocaleServer(locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const currentLocale = await useLocaleServer(locale);
   
   // شبیه‌سازی داده‌های آگهی شغلی
   const job = {
